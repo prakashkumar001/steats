@@ -24,8 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Your Email"
-            android:paddingLeft="15dp"
+            android:paddingLeft="25dp"
             android:textSize="16dp"
+            android:textColor="#44413A"
             android:background="@drawable/input_bg"
             />
 
@@ -34,9 +35,10 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Password"
-            android:paddingLeft="15dp"
+            android:paddingLeft="25dp"
             android:layout_marginTop="10dp"
             android:textSize="16dp"
+            android:textColor="#44413A"
             android:background="@drawable/input_bg"
 
             />
