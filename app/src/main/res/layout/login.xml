@@ -1,45 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/bg"
     >
 
     <ImageView
+        android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@mipmap/login_header"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/header"
+        android:layout_marginTop="-90dp"
+        android:layout_marginRight="10dp"
         android:src="@mipmap/logo"
-        android:layout_margin="35dp"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_below="@id/header"
+        android:id="@+id/actions"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            android:text="LOGIN"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="left"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            android:text="SIGN UP"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/inputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/actions"
+        android:layout_margin="10dp"
         android:orientation="vertical"
         >
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:hint="Your Email"
             android:paddingLeft="25dp"
             android:textSize="16dp"
             android:textColor="#44413A"
-            android:background="@drawable/input_bg"
             />
 
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:hint="Password"
             android:paddingLeft="25dp"
             android:layout_marginTop="10dp"
             android:textSize="16dp"
-            android:textColor="#44413A"
-            android:background="@drawable/input_bg"
+            android:textColor="@android:color/black"
 
             />
 
@@ -48,14 +95,17 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="right|end"
-            android:textColor="@android:color/white"
-            android:text="Forget Password ?"
+            android:textColor="@android:color/black"
+            android:text="Forgot Password ?"
             />
 
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:ems="15"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:text="Login"
             android:textColor="@android:color/white"
             android:background="@drawable/button_bg"
@@ -70,25 +120,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/inputs"
         android:orientation="vertical"
         >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            android:text="Already you are here ?  Signup"
-            />
+
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:text="OR"
             />
 
@@ -100,6 +143,17 @@
             android:gravity="center"
             >
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:text="Also Login with"
+                />
+            <View
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -107,8 +161,8 @@
                 />
 
             <View
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -125,4 +179,4 @@
 
 
 
-</LinearLayout>
+</RelativeLayout>
