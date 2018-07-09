@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -22,10 +21,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import street.com.eats.MainActivity;
+import street.com.eats.activities.MainActivity;
 import street.com.eats.R;
 import street.com.eats.common.IntroData;
 import street.com.eats.common.PreferenceManager;
+import street.com.eats.registration.SignUp;
 
 /**
  * Created by Prakash on 7/3/2018.
@@ -40,7 +40,7 @@ public class IntroSlider extends AppCompatActivity {
        // private int[] layouts;
         private PreferenceManager prefManager;
         private ArrayList<IntroData> data;
-
+        private Button signup;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -50,6 +50,7 @@ public class IntroSlider extends AppCompatActivity {
             data.add(new IntroData(R.mipmap.group,"The easiest way to order food from your favourite restaurant!"));
             data.add(new IntroData(R.mipmap.group,"The easiest way to order food from your favourite restaurant!"));
             // Checking for first time launch - before calling setContentView()
+
             prefManager = new PreferenceManager(this);
             if (!prefManager.isFirstTimeLaunch()) {
                 launchHomeScreen();
@@ -63,8 +64,7 @@ public class IntroSlider extends AppCompatActivity {
 
             setContentView(R.layout.intro);
 
-            viewPager = (ViewPager) findViewById(R.id.view_pager);
-            dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
+            intailiseView();
 
 
 
@@ -78,6 +78,15 @@ public class IntroSlider extends AppCompatActivity {
             myViewPagerAdapter = new MyViewPagerAdapter();
             viewPager.setAdapter(myViewPagerAdapter);
             viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+
+            signup.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(IntroSlider.this, SignUp.class);
+                    startActivity(i);
+                    finish();
+                }
+            });
 
 
         }
@@ -184,6 +193,13 @@ public class IntroSlider extends AppCompatActivity {
             View view = (View) object;
             container.removeView(view);
         }
+
+    }
+    private void intailiseView()
+    {
+        signup=(Button)findViewById(R.id.signup);
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
 
     }
 }

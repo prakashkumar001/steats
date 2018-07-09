@@ -39,6 +39,7 @@
         >
 
     <Button
+        android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:ems="15"

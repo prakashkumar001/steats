@@ -70,6 +70,7 @@
         >
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Your Email"
@@ -80,6 +81,8 @@
 
 
         <EditText
+            android:id="@+id/password"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -91,6 +94,7 @@
             />
 
         <TextView
+            android:id="@+id/forgotpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -101,6 +105,7 @@
 
 
         <Button
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:ems="15"

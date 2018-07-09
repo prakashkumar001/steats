@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/hotels"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="Hotels" />
+        <item android:id="@+id/changepassword"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="Change Password" />
+        <item android:id="@+id/logout"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="Log out" />
+    </group>
+
+
+</menu>
