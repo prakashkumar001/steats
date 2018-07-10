@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".intro.IntroSlider">
+        <activity android:name=".activities.HotelDetail">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
