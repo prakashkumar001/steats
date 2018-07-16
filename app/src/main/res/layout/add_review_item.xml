@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight=".7"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="Yummy"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1.3"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+
+            >
+
+
+
+                <ImageView
+                    android:id="@+id/starone"
+                    android:layout_width="20dp"
+                    android:layout_margin="10dp"
+                    android:layout_height="20dp"
+                    android:tag="1"
+                    android:src="@mipmap/yellow"
+                    />
+                <ImageView
+                    android:id="@+id/startwo"
+                    android:tag="2"
+                    android:layout_margin="10dp"
+
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/bright_yellow"
+                    />
+                <ImageView
+                    android:id="@+id/starthree"
+                    android:tag="3"
+                    android:layout_margin="10dp"
+
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/red"
+                    />
+                <ImageView
+                    android:id="@+id/starfour"
+                    android:tag="4"
+                    android:layout_margin="10dp"
+
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/dark_green"
+                    />
+
+                 <ImageView
+                     android:id="@+id/starfive"
+                     android:tag="4"
+                     android:layout_margin="10dp"
+
+                     android:layout_width="20dp"
+                     android:layout_height="20dp"
+                     android:src="@mipmap/light_green"
+                     />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
