@@ -28,6 +28,9 @@
             />
         <activity android:name=".forgotpassword.ForgotPassword"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
