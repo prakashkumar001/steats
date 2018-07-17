@@ -8,17 +8,23 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import street.com.eats.R;
+import street.com.eats.adapter.HotelDetailAdapter;
+import street.com.eats.adapter.SideMenuAdapter;
 import street.com.eats.fragment.HotelDashboard;
+import street.com.eats.model.Menu;
 
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-
+public class MainActivity extends AppCompatActivity {
+        RecyclerView sidemenu;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +32,7 @@ protected void onCreate(Bundle savedInstanceState) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        intialiseList();
         home();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -34,8 +41,7 @@ protected void onCreate(Bundle savedInstanceState) {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+
         }
 
 @Override
@@ -48,50 +54,28 @@ public void onBackPressed() {
         }
         }
 
-@Override
-public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
-        return true;
+
+
+        private void intialiseList()
+        {
+                List<Menu> detailList = new ArrayList<Menu>();
+                detailList.add(new Menu("My Profile",R.mipmap.profile));
+                detailList.add(new Menu("Recently Viewed",R.mipmap.viewed));
+                detailList.add(new Menu("Favourites",R.mipmap.favorites));
+                detailList.add(new Menu("Location",R.mipmap.location_color));
+                detailList.add(new Menu("Rate Us",R.mipmap.rateus));
+                detailList.add(new Menu("Settings",R.mipmap.settings));
+                detailList.add(new Menu("About Us",R.mipmap.about_us));
+                detailList.add(new Menu("Sign Out",R.mipmap.signout));
+
+                sidemenu=(RecyclerView)findViewById(R.id.sidemenu);
+                SideMenuAdapter adapter=new SideMenuAdapter(MainActivity.this,detailList);
+                RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MainActivity.this);
+                sidemenu.setLayoutManager(mLayoutManager);
+                sidemenu.setItemAnimator(new DefaultItemAnimator());
+                sidemenu.setAdapter(adapter);
         }
 
-@Override
-public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        /*//noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-        return true;
-        }*/
-
-        return super.onOptionsItemSelected(item);
-        }
-
-@SuppressWarnings("StatementWithEmptyBody")
-@Override
-public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.hotels) {
-        // Handle the camera action
-
-                HotelDashboard hoteldashbaord=new HotelDashboard();
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.frame, hoteldashbaord).commit();
-        } else if (id == R.id.changepassword) {
-
-        } else if (id == R.id.logout) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-        }
 
         private void home()
         {
@@ -99,5 +83,11 @@ public boolean onNavigationItemSelected(MenuItem item) {
                 HotelDashboard hoteldashbaord=new HotelDashboard();
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frame, hoteldashbaord).commit();
+        }
+        void closeDrawer()
+        {
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+
         }
         }
