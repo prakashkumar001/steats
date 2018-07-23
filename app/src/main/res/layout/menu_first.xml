@@ -4,13 +4,24 @@
     android:onClick="showPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+    <ImageView
+
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/menu_header"
+        />
     <!-- Navigation Drawer-->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/sidemenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/image"
         android:layout_gravity="left"
         android:background="#ffffff">
 
     </android.support.v7.widget.RecyclerView>
+
 </FrameLayout>

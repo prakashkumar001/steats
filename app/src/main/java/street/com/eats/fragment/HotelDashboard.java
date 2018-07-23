@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ import street.com.eats.common.Snap;
 public class HotelDashboard extends Fragment {
     RecyclerView recyclerView;
     List<Hotel> hotelList;
+    public static FrameLayout frame;
     public static final String ORIENTATION = "orientation";
 
     private boolean mHorizontal;
@@ -40,6 +42,7 @@ public class HotelDashboard extends Fragment {
         View view=inflater.inflate(R.layout.hotel_dashboard, container, false);
 
         intailiseView(view);
+
         return view;
     }
 
@@ -48,6 +51,7 @@ public class HotelDashboard extends Fragment {
 
 
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView);
+        frame=(FrameLayout) view.findViewById(R.id.contentPage);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
@@ -77,6 +81,15 @@ public class HotelDashboard extends Fragment {
 
 
         return apps;
+    }
+
+    public static void reset()
+    {
+         //frame.setTranslationX((float) (frame.getWidth() * -1));
+        frame.animate().translationX((float) (frame.getWidth() * -1));
+        frame.setScaleX(1.0f);
+        frame.setScaleY(1.0f);
+
     }
 
 }

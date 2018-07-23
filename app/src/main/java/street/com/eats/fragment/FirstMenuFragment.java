@@ -52,7 +52,7 @@ public class FirstMenuFragment extends Fragment {
        close.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               frame.requestLayout();
+               HotelDashboard.reset();
 
            }
        });

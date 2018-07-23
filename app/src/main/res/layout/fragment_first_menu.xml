@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/background" />
+        android:background="@drawable/background" />
 
     <View
         android:layout_width="match_parent"
@@ -24,14 +24,24 @@
         android:layout_margin="10dp"
         android:src="@mipmap/close"
         />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
 
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/aasife"
+        />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/sidemenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/image"
         android:layout_gravity="center"
         >
 
     </android.support.v7.widget.RecyclerView>
-
+    </RelativeLayout>
 </FrameLayout>
