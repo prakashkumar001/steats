@@ -1,6 +1,8 @@
 package street.com.eats.adapter;
 
 import android.app.Activity;
+import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import street.com.eats.R;
+import street.com.eats.activities.MainActivity;
+import street.com.eats.fragment.FirstMenuFragment;
 import street.com.eats.model.Menu;
 
 public class SideMenuAdapter extends RecyclerView.Adapter<SideMenuAdapter.MyViewHolder> {
@@ -58,6 +62,21 @@ public class SideMenuAdapter extends RecyclerView.Adapter<SideMenuAdapter.MyView
         holder.productname.setText(details.get(position).name);
         holder.image.setImageResource(details.get(position).logo);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                    FirstMenuFragment comedy = new FirstMenuFragment();
+                    FragmentManager fragmentManager = ((MainActivity) ctx).getSupportFragmentManager();
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.contentPage, comedy)
+                            .commit();
+
+
+            }
+        });
 
     }
 
