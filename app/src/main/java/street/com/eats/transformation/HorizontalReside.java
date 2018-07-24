@@ -4,6 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import street.com.eats.R;
+import street.com.eats.common.GlobalClass;
 
 
 public class HorizontalReside implements ViewPager.PageTransformer {
@@ -37,6 +38,8 @@ public class HorizontalReside implements ViewPager.PageTransformer {
                 page.setScaleY(scale);
 
                 float deltaWidth = page.getWidth() - scale*page.getWidth();
+
+                GlobalClass.swipePosition=position;
 
                 //place the fragment to the start of the screen and move the fragment to left
                 page.setTranslationX(-position*page.getWidth() - deltaWidth/2);

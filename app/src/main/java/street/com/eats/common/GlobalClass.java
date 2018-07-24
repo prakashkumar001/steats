@@ -9,6 +9,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 public class GlobalClass extends Application {
+    public static float swipePosition=0.0f;
     public void onCreate() {
 
 

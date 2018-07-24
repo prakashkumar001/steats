@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -79,7 +81,7 @@
         android:hint="Mobile Number"
         android:paddingLeft="25dp"
         android:textSize="16dp"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
 
         android:textColor="#44413A"
         android:background="@drawable/signup_input"
@@ -93,7 +95,7 @@
         android:hint="Password"
         android:paddingLeft="25dp"
         android:textSize="16dp"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
 
         android:textColor="#44413A"
         android:background="@drawable/signup_input"
@@ -108,7 +110,7 @@
         android:hint="Confirm Password"
         android:paddingLeft="25dp"
         android:textSize="16dp"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
 
         android:textColor="#44413A"
         android:background="@drawable/signup_input"
@@ -150,7 +152,7 @@
         android:gravity="center"
         android:layout_gravity="center|top"
         android:text="Create an Account"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:textColor="@android:color/white"
         android:background="@drawable/button_bg"
         />

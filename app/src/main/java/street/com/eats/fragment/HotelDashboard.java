@@ -1,16 +1,22 @@
 package street.com.eats.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Slide;
+import android.transition.TransitionManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -20,8 +26,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import street.com.eats.R;
+import street.com.eats.activities.MainActivity;
 import street.com.eats.adapter.Adapter;
+import street.com.eats.adapter.MyPagerAdapter;
 import street.com.eats.adapter.SnapAdapter;
+import street.com.eats.common.GlobalClass;
 import street.com.eats.common.Hotel;
 import street.com.eats.common.Snap;
 
@@ -85,11 +94,21 @@ public class HotelDashboard extends Fragment {
 
     public static void reset()
     {
-         //frame.setTranslationX((float) (frame.getWidth() * -1));
-        frame.animate().translationX((float) (frame.getWidth() * -1));
+        /*TransitionManager.beginDelayedTransition(frame, new Slide(Gravity.RIGHT));
+        frame.setVisibility(true ? View.VISIBLE : View.GONE);
+         frame.setTranslationX((float) (frame.getWidth() * -1));*/
+       // frame.animate().translationX((float) (frame.getWidth() * -1));
+
         frame.setScaleX(1.0f);
         frame.setScaleY(1.0f);
+        frame.animate().translationX((float) (frame.getWidth() * -1));
+
+
+
+       // frame.setTranslationX((float) (frame.getWidth() * -1));
+
 
     }
+
 
 }

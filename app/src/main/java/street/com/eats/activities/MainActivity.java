@@ -25,6 +25,7 @@ import street.com.eats.R;
 import street.com.eats.adapter.HotelDetailAdapter;
 import street.com.eats.adapter.MyPagerAdapter;
 import street.com.eats.adapter.SideMenuAdapter;
+import street.com.eats.common.GlobalClass;
 import street.com.eats.fragment.FirstMenuFragment;
 import street.com.eats.fragment.HotelDashboard;
 import street.com.eats.model.Menu;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
    public static ViewPager viewPager;
     public static MyPagerAdapter myPagerAdapter;
+    public static float scale;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +49,53 @@ protected void onCreate(Bundle savedInstanceState) {
     myPagerAdapter.addFragments(new FirstMenuFragment());
     myPagerAdapter.addFragments(new HotelDashboard());
 
-    viewPager.setPageTransformer(true, new HorizontalReside());
+    //viewPager.setPageTransformer(true, new HorizontalReside());
+    viewPager.setPageTransformer(false, new ViewPager.PageTransformer() {
+        @Override
+        public void transformPage(View page, float position) {
+            if (page.getId() == R.id.menuFirst){
+                //putting fragment to the start of the screen
+                page.setTranslationX(-position*page.getWidth());
+            }
+            else if (page.getId() == R.id.contentPage){
+                //when we swipe to left this code applied
+                if (position <= 0){
+
+                    //first we do scaling to 50%
+                     scale = Math.max(0.6f,1-Math.abs(position));
+                    page.setScaleX(scale);
+                    page.setScaleY(scale);
+
+                    float deltaWidth = page.getWidth() - scale*page.getWidth();
+
+
+                    //place the fragment to the start of the screen and move the fragment to left
+                   // page.setTranslationX(-position*page.getWidth() - deltaWidth/2);
+
+                    //frame.setScaleX(1.0f);
+                    //frame.setScaleY(1.0f);
+                    page.animate().translationX(-position*page.getWidth() - deltaWidth/2);
+
+
+                }
+                //when we swipe to right this code applied
+                else if (position > 0){
+
+                    //first we do scaling to 50%
+                     scale = Math.max(0.8f,1-Math.abs(position));
+                    page.setScaleX(scale);
+                    page.setScaleY(scale);
+
+                    float deltaWidth = page.getWidth()/2 - scale*page.getWidth()/2;
+
+                    //place the fragment to the start of the screen and move the fragment to right
+                    //page.setTranslationX(-position*page.getWidth()/2 + deltaWidth/2);
+                    page.animate().translationX(-position*page.getWidth()/2 + deltaWidth/2);
+
+                }
+            }
+        }
+    });
     //set adapter to vewpager instance
     viewPager.setAdapter(myPagerAdapter);
 
