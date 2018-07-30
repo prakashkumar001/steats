@@ -69,11 +69,6 @@ protected void onCreate(Bundle savedInstanceState) {
                     float deltaWidth = page.getWidth() - scale*page.getWidth();
 
 
-                    //place the fragment to the start of the screen and move the fragment to left
-                   // page.setTranslationX(-position*page.getWidth() - deltaWidth/2);
-
-                    //frame.setScaleX(1.0f);
-                    //frame.setScaleY(1.0f);
                     page.animate().translationX(-position*page.getWidth() - deltaWidth/2);
 
 
@@ -88,8 +83,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
                     float deltaWidth = page.getWidth()/2 - scale*page.getWidth()/2;
 
-                    //place the fragment to the start of the screen and move the fragment to right
-                    //page.setTranslationX(-position*page.getWidth()/2 + deltaWidth/2);
+
                     page.animate().translationX(-position*page.getWidth()/2 + deltaWidth/2);
 
                 }
