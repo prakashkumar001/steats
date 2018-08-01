@@ -23,6 +23,8 @@
             />
         <activity android:name=".registration.SignUp"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
+
             />
         <activity android:name=".login.Login"
             android:theme="@style/AppTheme.NoActionBar"

@@ -60,6 +60,8 @@
         android:paddingLeft="25dp"
         android:layout_margin="10dp"
         android:textSize="16dp"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
         android:textColor="#44413A"
         android:background="@drawable/signup_input"
         />
@@ -72,6 +74,8 @@
         android:paddingLeft="25dp"
         android:textSize="16dp"
         android:layout_margin="10dp"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
         android:textColor="#44413A"
         android:background="@drawable/signup_input"
         />
@@ -85,7 +89,8 @@
         android:paddingLeft="25dp"
         android:textSize="16dp"
         android:layout_margin="5dp"
-
+        android:singleLine="true"
+        android:imeOptions="actionNext"
         android:textColor="#44413A"
         android:background="@drawable/signup_input"
         />
@@ -99,7 +104,8 @@
         android:paddingLeft="25dp"
         android:textSize="16dp"
         android:layout_margin="5dp"
-
+        android:singleLine="true"
+        android:imeOptions="actionNext"
         android:textColor="#44413A"
         android:background="@drawable/signup_input"
         />
@@ -114,7 +120,8 @@
         android:paddingLeft="25dp"
         android:textSize="16dp"
         android:layout_margin="5dp"
-
+        android:singleLine="true"
+        android:imeOptions="actionDone"
         android:textColor="#44413A"
         android:background="@drawable/signup_input"
         />
