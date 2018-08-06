@@ -25,6 +25,7 @@ import street.com.eats.activities.MainActivity;
 import street.com.eats.R;
 import street.com.eats.common.IntroData;
 import street.com.eats.common.PreferenceManager;
+import street.com.eats.login.Login;
 import street.com.eats.registration.SignUp;
 
 /**
@@ -82,7 +83,7 @@ public class IntroSlider extends AppCompatActivity {
             signup.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i=new Intent(IntroSlider.this, SignUp.class);
+                    Intent i=new Intent(IntroSlider.this, Login.class);
                     startActivity(i);
                     finish();
                 }
