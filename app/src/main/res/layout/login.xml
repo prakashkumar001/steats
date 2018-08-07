@@ -166,9 +166,11 @@
                 android:layout_height="20dp"/>
 
             <ImageView
+                android:id="@+id/fb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/facebook"
+                android:onClick="fbLogin"
                 />
 
             <View

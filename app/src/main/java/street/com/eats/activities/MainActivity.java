@@ -32,7 +32,7 @@ import street.com.eats.model.Menu;
 import street.com.eats.transformation.HorizontalReside;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
    public static ViewPager viewPager;
     public static MyPagerAdapter myPagerAdapter;
@@ -69,7 +69,7 @@ protected void onCreate(Bundle savedInstanceState) {
                     float deltaWidth = page.getWidth() - scale*page.getWidth();
 
 
-                    page.animate().translationX(-position*page.getWidth() - deltaWidth/2);
+                    page.setTranslationX(-position*page.getWidth() - deltaWidth/2);
 
 
                 }
@@ -84,7 +84,7 @@ protected void onCreate(Bundle savedInstanceState) {
                     float deltaWidth = page.getWidth()/2 - scale*page.getWidth()/2;
 
 
-                    page.animate().translationX(-position*page.getWidth()/2 + deltaWidth/2);
+                    page.setTranslationX(-position*page.getWidth()/2 + deltaWidth/2);
 
                 }
             }

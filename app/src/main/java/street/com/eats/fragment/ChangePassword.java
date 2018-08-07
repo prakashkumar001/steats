@@ -8,10 +8,11 @@ import android.view.ViewGroup;
 
 import street.com.eats.R;
 
-public class Settings  extends Fragment {
+public class ChangePassword  extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_first_menu, container, false);
+        View view=inflater.inflate(R.layout.changepassword, container, false);
+
         if(view.getScaleX()==1.0f)
         {
 
@@ -23,7 +24,6 @@ public class Settings  extends Fragment {
             // frame.setTranslationX((float) (frame.getWidth() * -1));
 
         }
-
 
         return view;
     }

@@ -7,7 +7,7 @@ import street.com.eats.R;
 import street.com.eats.common.GlobalClass;
 
 
-public class HorizontalReside implements ViewPager.PageTransformer {
+public abstract class HorizontalReside implements ViewPager.PageTransformer {
     @Override
     public void transformPage(View page, float position) {
 
@@ -39,10 +39,9 @@ public class HorizontalReside implements ViewPager.PageTransformer {
 
                 float deltaWidth = page.getWidth() - scale*page.getWidth();
 
-                GlobalClass.swipePosition=position;
 
-                //place the fragment to the start of the screen and move the fragment to left
                 page.setTranslationX(-position*page.getWidth() - deltaWidth/2);
+
 
             }
             //when we swipe to right this code applied
@@ -55,7 +54,7 @@ public class HorizontalReside implements ViewPager.PageTransformer {
 
                 float deltaWidth = page.getWidth()/2 - scale*page.getWidth()/2;
 
-                //place the fragment to the start of the screen and move the fragment to right
+
                 page.setTranslationX(-position*page.getWidth()/2 + deltaWidth/2);
 
             }
@@ -66,5 +65,6 @@ public class HorizontalReside implements ViewPager.PageTransformer {
         }
 */
     }
+    protected abstract void transformPage(final View page, final int pageIndex, final float position);
 
 }
