@@ -2,6 +2,7 @@ package street.com.eats.adapter;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -68,12 +69,14 @@ public class SideMenuAdapter extends RecyclerView.Adapter<SideMenuAdapter.MyView
 
 
 
-                    FirstMenuFragment comedy = new FirstMenuFragment();
+                    Fragment comedy = details.get(position).fragment;
+
                     FragmentManager fragmentManager = ((MainActivity) ctx).getSupportFragmentManager();
                     fragmentManager.beginTransaction()
                             .replace(R.id.contentPage, comedy)
                             .commit();
 
+                    MainActivity.viewPager.setCurrentItem(1);
 
             }
         });

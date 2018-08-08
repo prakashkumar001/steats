@@ -38,7 +38,7 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_margin="15dp"
-            android:src="@mipmap/logo"
+            android:src="@drawable/profile"
             app:civ_border_width="2dp"
             app:civ_border_color="#FFFF"/>
 
@@ -47,9 +47,9 @@
                 android:layout_height="wrap_content"
                 android:text="Sharmila Uthai"
                 android:textSize="18dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="15dp"
-                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center|top"
+                android:gravity="center|top"
                 android:textColor="@android:color/white"
                 />
         </LinearLayout>
@@ -57,14 +57,14 @@
     </FrameLayout>
 
 
-            <ImageView
+          <!--  <ImageView
                 android:id="@+id/close"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_margin="10dp"
                 android:background="@drawable/ic_close_black_24dp"
-                />
+                />-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/sidemenu"

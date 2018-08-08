@@ -49,31 +49,35 @@ public class FirstMenuFragment extends Fragment {
     public void onViewCreated(final View views, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(views, savedInstanceState);
        intialiseList(views);
-       close.setOnClickListener(new View.OnClickListener() {
+      /* close.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+
+               View page=frame;
                HotelDashboard.reset();
 
            }
-       });
+       });*/
 
 
     }
     private void intialiseList(View view)
     {
         List<Menu> detailList = new ArrayList<Menu>();
-        detailList.add(new Menu("My Profile",R.mipmap.profile));
-        detailList.add(new Menu("Recently Viewed",R.mipmap.viewed));
-        detailList.add(new Menu("Favourites",R.mipmap.favorites));
-        detailList.add(new Menu("Location",R.mipmap.location_color));
-        detailList.add(new Menu("Rate Us",R.mipmap.rateus));
-        detailList.add(new Menu("Settings",R.mipmap.settings));
-        detailList.add(new Menu("About Us",R.mipmap.about_us));
-        detailList.add(new Menu("Sign Out",R.mipmap.signout));
+        detailList.add(new Menu("Home",R.mipmap.profile,new HotelDashboard()));
+        detailList.add(new Menu("My Profile",R.mipmap.profile,new HotelDashboard()));
+        detailList.add(new Menu("Recently Viewed",R.mipmap.viewed,new HotelDashboard()));
+        detailList.add(new Menu("Favourites",R.mipmap.favorites,new HotelDashboard()));
+        detailList.add(new Menu("Location",R.mipmap.location_color,new HotelDashboard()));
+        detailList.add(new Menu("Rate Us",R.mipmap.rateus,new HotelDashboard()));
+        detailList.add(new Menu("Settings",R.mipmap.settings,new HotelDashboard()));
+        detailList.add(new Menu("About Us",R.mipmap.about_us,new HotelDashboard()));
+        detailList.add(new Menu("Change Password",R.mipmap.about_us,new ChangePassword()));
+        detailList.add(new Menu("Sign Out",R.mipmap.signout,new HotelDashboard()));
 
         sidemenu=(RecyclerView)view.findViewById(R.id.sidemenu);
         frame=(FrameLayout) view.findViewById(R.id.menuFirst);
-        close=(ImageView) view.findViewById(R.id.close);
+        //close=(ImageView) view.findViewById(R.id.close);
         SideMenuAdapter adapter=new SideMenuAdapter(getActivity(),detailList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         sidemenu.setLayoutManager(mLayoutManager);

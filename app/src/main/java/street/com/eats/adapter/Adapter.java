@@ -42,7 +42,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                     .inflate(R.layout.adapter_pager, parent, false));
         } else {
             return mHorizontal ? new ViewHolder(LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.adapter, parent, false)) :
+                    .inflate(R.layout.hotel_item, parent, false)) :
                     new ViewHolder(LayoutInflater.from(parent.getContext())
                             .inflate(R.layout.adapter_vertical, parent, false));
         }

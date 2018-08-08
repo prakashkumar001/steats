@@ -1,5 +1,6 @@
 package street.com.eats.fragment;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.transition.Slide;
 import android.transition.TransitionManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +22,7 @@ import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -38,12 +41,12 @@ import street.com.eats.common.Snap;
  * Created by Creative IT Works on 09-Jul-18.
  */
 
-public class HotelDashboard extends Fragment {
+public class HotelDashboard extends Fragment{
     RecyclerView recyclerView;
     List<Hotel> hotelList;
     public static FrameLayout frame;
     public static final String ORIENTATION = "orientation";
-
+    ImageView back;
     private boolean mHorizontal;
     @Nullable
     @Override
@@ -52,16 +55,34 @@ public class HotelDashboard extends Fragment {
 
         intailiseView(view);
 
+
+        Handler handler=new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                reset();
+            }
+        },1000);
+                // frame.setTranslationX((float) (frame.getWidth() * -1));
+
+
+      /*  back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reset();
+            }
+        });*/
         return view;
     }
 
     private void intailiseView(View view)
     {
 
-
-        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView);
         frame=(FrameLayout) view.findViewById(R.id.contentPage);
 
+        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerView);
+        back=(ImageView) view.findViewById(R.id.back);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
         recyclerView.setNestedScrollingEnabled(false);
@@ -94,21 +115,16 @@ public class HotelDashboard extends Fragment {
 
     public static void reset()
     {
-        /*TransitionManager.beginDelayedTransition(frame, new Slide(Gravity.RIGHT));
-        frame.setVisibility(true ? View.VISIBLE : View.GONE);
-         frame.setTranslationX((float) (frame.getWidth() * -1));*/
-       // frame.animate().translationX((float) (frame.getWidth() * -1));
-
-        frame.setScaleX(1.0f);
-        frame.setScaleY(1.0f);
-        frame.animate().translationX((float) (frame.getWidth() * -1));
 
 
+       /*     frame.setScaleX(1.0f);
+            frame.setScaleY(1.0f);
+            frame.animate().translationX((float) (frame.getWidth() * -1));*/
+            // frame.setTranslationX((float) (frame.getWidth() * -1));
 
-       // frame.setTranslationX((float) (frame.getWidth() * -1));
+
 
 
     }
-
 
 }
