@@ -16,7 +16,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import street.com.eats.R;
-import street.com.eats.activities.HotelDetail;
+import street.com.eats.activities.SelectionHotel;
 import street.com.eats.common.Hotel;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
@@ -59,7 +59,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(context, HotelDetail.class);
+                Intent i=new Intent(context, SelectionHotel.class);
                 i.putExtra("name",app);
                 context.startActivity(i);
             }

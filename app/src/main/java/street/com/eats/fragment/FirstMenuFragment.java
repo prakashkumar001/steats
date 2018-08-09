@@ -71,7 +71,7 @@ public class FirstMenuFragment extends Fragment {
         detailList.add(new Menu("Location",R.mipmap.location_color,new HotelDashboard()));
         detailList.add(new Menu("Rate Us",R.mipmap.rateus,new HotelDashboard()));
         detailList.add(new Menu("Settings",R.mipmap.settings,new HotelDashboard()));
-        detailList.add(new Menu("About Us",R.mipmap.about_us,new HotelDashboard()));
+        detailList.add(new Menu("About Us",R.mipmap.about_us,new AboutUs()));
         detailList.add(new Menu("Change Password",R.mipmap.about_us,new ChangePassword()));
         detailList.add(new Menu("Sign Out",R.mipmap.signout,new HotelDashboard()));
 

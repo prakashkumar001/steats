@@ -28,4 +28,7 @@
 
     <string name="facebook_app_id">302975346940807</string>
     <string name="fb_login_protocol_scheme">fb302975346940807</string>
+
+    <string name="directionsApiKey">AIzaSyC1ihk01yV_6cnu_KKQu_ra5WANrL8oD9I</string>
+
 </resources>

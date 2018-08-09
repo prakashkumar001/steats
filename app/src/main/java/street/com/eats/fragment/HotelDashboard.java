@@ -56,23 +56,6 @@ public class HotelDashboard extends Fragment{
         intailiseView(view);
 
 
-        Handler handler=new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                reset();
-            }
-        },1000);
-                // frame.setTranslationX((float) (frame.getWidth() * -1));
-
-
-      /*  back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                reset();
-            }
-        });*/
         return view;
     }
 
@@ -113,18 +96,6 @@ public class HotelDashboard extends Fragment{
         return apps;
     }
 
-    public static void reset()
-    {
 
-
-       /*     frame.setScaleX(1.0f);
-            frame.setScaleY(1.0f);
-            frame.animate().translationX((float) (frame.getWidth() * -1));*/
-            // frame.setTranslationX((float) (frame.getWidth() * -1));
-
-
-
-
-    }
 
 }

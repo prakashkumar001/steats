@@ -14,7 +14,7 @@ public class ChangePassword  extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.changepassword, container, false);
 
-        if(view.getScaleX()==1.0f)
+      /*  if(view.getScaleX()==1.0f)
         {
 
         }else
@@ -25,7 +25,7 @@ public class ChangePassword  extends Fragment {
             // frame.setTranslationX((float) (frame.getWidth() * -1));
 
         }
-
+*/
         return view;
     }
 }
