@@ -44,7 +44,7 @@ import street.com.eats.common.Snap;
 public class HotelDashboard extends Fragment{
     RecyclerView recyclerView;
     List<Hotel> hotelList;
-    public static FrameLayout frame;
+    public  FrameLayout frame;
     public static final String ORIENTATION = "orientation";
     ImageView back;
     private boolean mHorizontal;
@@ -55,6 +55,12 @@ public class HotelDashboard extends Fragment{
 
         intailiseView(view);
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.showPage();
+            }
+        });
 
         return view;
     }

@@ -99,10 +99,20 @@ protected void onCreate(Bundle savedInstanceState) {
 
         }
     //method called when user clicked on menu fragment layouts
-    public void showPage(View view){
-        viewPager.setCurrentItem(1);
+    public static void showPage(){
+        viewPager.setCurrentItem(getNextPossibleItemIndex(-1), true);
     }
 
 
+    public static int getNextPossibleItemIndex (int change) {
 
+        int currentIndex = viewPager.getCurrentItem();
+        int total = viewPager.getAdapter().getCount();
+
+        if (currentIndex + change < 0) {
+            return 0;
+        }
+
+        return Math.abs((currentIndex + change) % total) ;
+    }
 }

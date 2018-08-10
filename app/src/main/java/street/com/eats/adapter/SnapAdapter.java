@@ -1,6 +1,9 @@
 package street.com.eats.adapter;
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
@@ -17,8 +20,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import street.com.eats.R;
-import street.com.eats.common.Hotel;
+import street.com.eats.activities.MainActivity;
+import street.com.eats.activities.SelectionHotel;
 import street.com.eats.common.Snap;
+import street.com.eats.activities.HotelList;
 import street.com.eats.gravityLib.GravityPagerSnapHelper;
 import street.com.eats.gravityLib.GravitySnapHelper;
 
@@ -28,6 +33,7 @@ public class SnapAdapter extends RecyclerView.Adapter<SnapAdapter.ViewHolder> im
     public static final int HORIZONTAL = 1;
 
     private ArrayList<Snap> mSnaps;
+    Context context;
     // Disable touch detection for parent recyclerView if we use vertical nested recyclerViews
     private View.OnTouchListener mTouchListener = new View.OnTouchListener() {
         @Override
@@ -67,6 +73,7 @@ public class SnapAdapter extends RecyclerView.Adapter<SnapAdapter.ViewHolder> im
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        context=parent.getContext();
         View view = viewType == VERTICAL ? LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.adapter_snap_vertical, parent, false)
                 : LayoutInflater.from(parent.getContext())
@@ -81,7 +88,7 @@ public class SnapAdapter extends RecyclerView.Adapter<SnapAdapter.ViewHolder> im
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         Snap snap = mSnaps.get(position);
         holder.snapTextView.setText(snap.getText());
 
@@ -111,6 +118,27 @@ public class SnapAdapter extends RecyclerView.Adapter<SnapAdapter.ViewHolder> im
                 || snap.getGravity() == Gravity.END
                 || snap.getGravity() == Gravity.CENTER_HORIZONTAL,
                 snap.getGravity() == Gravity.CENTER, snap.getApps()));
+
+        holder.more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i=new Intent(context, HotelList.class);
+
+
+                if(position==0)
+                {
+                    i.putExtra("name","All");
+                }else if(position==1)
+                {
+                    i.putExtra("name","Nearby");
+                }else if (position==2)
+                {
+                    i.putExtra("name","Popular");
+                }
+                context.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -125,13 +153,14 @@ public class SnapAdapter extends RecyclerView.Adapter<SnapAdapter.ViewHolder> im
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView snapTextView;
+        public TextView snapTextView,more;
         public RecyclerView recyclerView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             snapTextView = (TextView) itemView.findViewById(R.id.snapTextView);
             recyclerView = (RecyclerView) itemView.findViewById(R.id.recyclerView);
+            more= (TextView) itemView.findViewById(R.id.more);
         }
 
     }

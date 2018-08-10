@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@drawable/logout_dialog"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
+    android:background="@drawable/logout_dialog"
 
     >
 
@@ -17,24 +16,27 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:background="@android:color/darker_gray"
+                android:background="@drawable/rounded_corner_top"
 
                 >
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
+                    android:gravity="end|center"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+
                     >
 
 
 
                     <ImageView
                         android:id="@+id/iv_close"
-                        android:layout_width="30dp"
-                        android:layout_alignParentRight="true"
+                        android:layout_width="20dp"
                         android:src="@mipmap/close"
-                        android:layout_height="30dp" />
-                </RelativeLayout>
+                        android:layout_height="20dp" />
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -80,23 +82,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp">
-
+            <View
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:text="No"
+                android:textColor="@android:color/darker_gray"
+                android:background="@drawable/button_shape"
                 android:layout_height="wrap_content" />
             <View
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_weight=".5"
                 android:layout_height="wrap_content"/>
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:text="YES"
-
+                android:textColor="@android:color/white"
+                android:background="@drawable/button_bg"
                 android:layout_height="wrap_content" />
-
+            <View
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -104,4 +115,4 @@
 
 
 
-</RelativeLayout>
+</LinearLayout>

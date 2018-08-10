@@ -38,8 +38,7 @@ public class AboutUs  extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.about_us, container, false);
-
-        pager = (ViewPager) view.findViewById(R.id.myviewpager);
+         init(view);
 
         adapter = new CarosaulAdapter( (MainActivity) getActivity(), ((MainActivity) getActivity()).getSupportFragmentManager());
         pager.setAdapter(adapter);
@@ -58,4 +57,10 @@ public class AboutUs  extends Fragment {
         pager.setPageMargin(-200);
         return view;
     }
+    void init(View view)
+    {
+        pager = (ViewPager) view.findViewById(R.id.myviewpager);
+
+    }
+
 }

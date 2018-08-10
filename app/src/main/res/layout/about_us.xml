@@ -41,6 +41,19 @@
             android:src="@mipmap/logo"
             />
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
     <android.support.v4.view.ViewPager
         android:id="@+id/myviewpager"
         android:layout_width="match_parent"
@@ -56,4 +69,23 @@
         android:textColor="@android:color/white"
         android:text="Welcome to our street food"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:textSize="14dp"
+        android:textColor="@android:color/white"
+        android:text="In today's fast paced world, our dear old ways has taken the backseat. Empathising with our craving for authentic street eats, and bringing back our most cherished memories with food, we at Steats cherry pick the best of best food joints. As this was started by foodies who connected on the grounds of mutual love for food, we are very careful in choosing these food joints. Also,all the joints listed here are light on the pocket and are sure to excite your taste buds. Take our word for it.
+
+There’s enough room in our list even for the high grade restaurants with reasonably priced, flavourful delicacies too.We don’t stop just with a few aspects of food. There are a lot more reasons for a restaurant to be chosen by us… right from their popularity, quality of food, the excitement and satisfaction it tends to offer.
+
+Giving so much importance to the metros, our hometowns are long forgotten. To bridge this gap, we don’t just stop with exploring the metros… our list covers every nook and corner of smaller, more authentic towns and cities too. Also, when the travel freak in you gets hungry in a new, less familiar place... Steats helps you spot the best eats in the remotest of place too.It’s a one stop app for the brimming hunger pang in you. Discover the best fit to soothe your taste buds, that too from the comfort of your fingertips.
+
+And…. as we aim at building a platform to mutually benefit all foodies out there… we also let you suggest restaurants we might have missed out on.Let the food make you grin!"
+        />
+</LinearLayout>
+    </ScrollView>
 </LinearLayout>
