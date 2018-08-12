@@ -66,6 +66,7 @@ public class FirstMenuFragment extends Fragment {
         List<Menu> detailList = new ArrayList<Menu>();
         detailList.add(new Menu("Home",R.mipmap.profile,new HotelDashboard()));
         detailList.add(new Menu("My Profile",R.mipmap.profile,new HotelDashboard()));
+        detailList.add(new Menu("Add Restaurent",R.mipmap.profile,new AddRestaurent()));
         detailList.add(new Menu("Recently Viewed",R.mipmap.viewed,new HotelDashboard()));
         detailList.add(new Menu("Favourites",R.mipmap.favorites,new HotelDashboard()));
         detailList.add(new Menu("Location",R.mipmap.location_color,new HotelDashboard()));

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1076986631670",
+    "firebase_url": "https://life-water.firebaseio.com",
+    "project_id": "life-water",
+    "storage_bucket": "life-water.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076986631670:android:d5c0b55873d0415d",
+        "android_client_info": {
+          "package_name": "street.com.eats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076986631670-edioq895rdu144q74a8sg143rvfu7c7f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "street.com.eats",
+            "certificate_hash": "78f2c6e1262b64b63a64d42ff7413c83bad06a04"
+          }
+        },
+        {
+          "client_id": "1076986631670-ns791epvqgbk86kphk7fu94e9tibn808.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAboSavkk14l53LEe1cd3yvhcU2L28kcoY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076986631670-ns791epvqgbk86kphk7fu94e9tibn808.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

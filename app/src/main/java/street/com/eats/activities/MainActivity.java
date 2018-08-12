@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity  {
    public static ViewPager viewPager;
     public static MyPagerAdapter myPagerAdapter;
     public static float scale;
+    public static boolean isOpen=false;
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +62,8 @@ protected void onCreate(Bundle savedInstanceState) {
                 //when we swipe to left this code applied
                 if (position <= 0){
 
+                    isOpen=true;
+
                     //first we do scaling to 50%
                      scale = Math.max(0.6f,1-Math.abs(position));
                     page.setScaleX(scale);
@@ -75,6 +78,8 @@ protected void onCreate(Bundle savedInstanceState) {
                 }
                 //when we swipe to right this code applied
                 else if (position > 0){
+
+                    isOpen=false;
 
                     //first we do scaling to 50%
                      scale = Math.max(0.8f,1-Math.abs(position));
@@ -100,6 +105,7 @@ protected void onCreate(Bundle savedInstanceState) {
         }
     //method called when user clicked on menu fragment layouts
     public static void showPage(){
+        isOpen=true;
         viewPager.setCurrentItem(getNextPossibleItemIndex(-1), true);
     }
 

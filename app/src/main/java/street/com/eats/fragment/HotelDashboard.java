@@ -58,7 +58,16 @@ public class HotelDashboard extends Fragment{
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.showPage();
+
+                if(!MainActivity.isOpen)
+                {
+                    MainActivity.showPage();
+                }else
+                {
+                    MainActivity.isOpen=false;
+                    MainActivity.viewPager.setCurrentItem(1);
+                }
+
             }
         });
 

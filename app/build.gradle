@@ -40,11 +40,18 @@ dependencies {
     implementation "com.andkulikov:transitionseverywhere:1.8.0"
     implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
 
-    implementation 'com.google.android.gms:play-services:8.3.0'
+    implementation 'com.google.android.gms:play-services:11.6.0'
+    //this is added when we integrated firebase
+    implementation 'com.google.firebase:firebase-auth:11.6.0'
+
+    //this line you need to add
+    //make sure you are using the same version for both
+    //and also make sure you are using version atleast 11.6.0
+    compile 'com.google.android.gms:play-services-auth:11.6.0'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.maps:google-maps-services:0.1.20'
     implementation 'com.google.maps.android:android-maps-utils:0.5'
     implementation 'com.github.moondroid.coverflow:library:1.0'
-
-    testImplementation 'junit:junit:4.12'
+      testImplementation 'junit:junit:4.12'
 }
+apply plugin: 'com.google.gms.google-services'
