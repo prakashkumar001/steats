@@ -1,5 +1,6 @@
 package street.com.eats.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -49,6 +51,8 @@ public class FirstMenuFragment extends Fragment {
     public void onViewCreated(final View views, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(views, savedInstanceState);
        intialiseList(views);
+
+
       /* close.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
@@ -69,7 +73,7 @@ public class FirstMenuFragment extends Fragment {
         detailList.add(new Menu("Add Restaurent",R.mipmap.profile,new AddRestaurent()));
         detailList.add(new Menu("Recently Viewed",R.mipmap.viewed,new HotelDashboard()));
         detailList.add(new Menu("Favourites",R.mipmap.favorites,new HotelDashboard()));
-        detailList.add(new Menu("Location",R.mipmap.location_color,new HotelDashboard()));
+        detailList.add(new Menu("Location",R.mipmap.location_color,new Location()));
         detailList.add(new Menu("Rate Us",R.mipmap.rateus,new HotelDashboard()));
         detailList.add(new Menu("Settings",R.mipmap.settings,new HotelDashboard()));
         detailList.add(new Menu("About Us",R.mipmap.about_us,new AboutUs()));

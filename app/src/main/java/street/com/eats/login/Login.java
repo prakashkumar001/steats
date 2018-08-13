@@ -45,6 +45,7 @@ import java.util.Arrays;
 import street.com.eats.R;
 import street.com.eats.activities.MainActivity;
 import street.com.eats.forgotpassword.ForgotPassword;
+import street.com.eats.registration.SignUp;
 
 /**
  * Created by Creative IT Works on 09-Jul-18.
@@ -53,7 +54,7 @@ import street.com.eats.forgotpassword.ForgotPassword;
 public class Login extends AppCompatActivity {
     EditText email,password;
     Button login;
-    TextView forgetpassword;
+    TextView forgetpassword,signup;
     CallbackManager callbackManager;
 
     //a constant for detecting the login intent result
@@ -63,7 +64,7 @@ public class Login extends AppCompatActivity {
     private static final String TAG = "simplifiedcoding";
 
     //creating a GoogleSignInClient object
-    GoogleSignInClient mGoogleSignInClient;
+   public static GoogleSignInClient mGoogleSignInClient;
 
     //And also a Firebase Auth object
     FirebaseAuth mAuth;
@@ -121,10 +122,19 @@ public class Login extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i=new Intent(Login.this, SignUp.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void intailiseView()
     {
+        signup= (TextView) findViewById(R.id.signup);
         login=(Button)findViewById(R.id.login);
         password = (EditText) findViewById(R.id.password);
         email = (EditText) findViewById(R.id.email);
@@ -305,5 +315,16 @@ public class Login extends AppCompatActivity {
 
         //starting the activity for result
         startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        startActivity(new Intent(Login.this, MainActivity.class));
+
+                    }
+                });
     }
 }

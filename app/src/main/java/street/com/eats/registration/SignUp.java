@@ -23,12 +23,13 @@ public class SignUp extends AppCompatActivity {
     Button submit;
     EditText name,email,mobile,password,c_password;
     CheckBox accept_terms;
+    TextView title;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
         intailiseView();
-
+        title.setText("Create New Account");
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +42,7 @@ public class SignUp extends AppCompatActivity {
 
     private void intailiseView()
     {
+        title=(TextView) findViewById(R.id.title);
         submit=(Button)findViewById(R.id.submit);
         name = (EditText) findViewById(R.id.name);
         email = (EditText) findViewById(R.id.email);

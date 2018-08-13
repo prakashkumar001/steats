@@ -18,7 +18,6 @@ import android.widget.ViewSwitcher;
 
 import java.util.ArrayList;
 
-import it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow;
 import street.com.eats.R;
 import street.com.eats.activities.MainActivity;
 import street.com.eats.activities.SelectionHotel;
