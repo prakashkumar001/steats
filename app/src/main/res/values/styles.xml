@@ -39,4 +39,13 @@
         <item name="windowNoTitle">true</item>
 
     </style>
+
+    <style name="CustomShowcaseTheme2" parent="ShowcaseView">
+        <item name="sv_backgroundColor">@color/colorPrimary</item>
+        <item name="sv_showcaseColor">@color/colorPrimary</item>
+        <item name="sv_buttonText">Close</item>
+      <!--  <item name="sv_titleTextAppearance">@style/CustomTitle2</item>
+        <item name="sv_detailTextAppearance">@style/CustomText2</item>-->
+    </style>
+
 </resources>
