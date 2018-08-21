@@ -91,7 +91,7 @@ public class HotelDashboard extends Fragment {
                         .setStyle(R.style.CustomShowcaseTheme2)
                         .setTarget(new ViewTarget(R.id.back, getActivity()))
                         .hideOnTouchOutside()
-                        .setContentTitle("Its My Navigation Drawer")
+                        .setContentTitle("Side Menu")
                         .setContentText("Click here and you will get options to navigate to other sections.")
                         .build();
             }
