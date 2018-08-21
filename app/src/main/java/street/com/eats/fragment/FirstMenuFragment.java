@@ -1,8 +1,6 @@
 package street.com.eats.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -11,21 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 import street.com.eats.R;
-import street.com.eats.activities.MainActivity;
 import street.com.eats.adapter.SideMenuAdapter;
 import street.com.eats.model.Menu;
-import street.com.eats.transformation.HorizontalReside;
 
 
 public class FirstMenuFragment extends Fragment {
@@ -68,16 +61,16 @@ public class FirstMenuFragment extends Fragment {
     private void intialiseList(View view)
     {
         List<Menu> detailList = new ArrayList<Menu>();
-        detailList.add(new Menu("Home",R.mipmap.profile,new HotelDashboard()));
+        detailList.add(new Menu("Home",R.drawable.home_icon,new HotelDashboard()));
         detailList.add(new Menu("My Profile",R.mipmap.profile,new HotelDashboard()));
-        detailList.add(new Menu("Add Restaurent",R.mipmap.profile,new AddRestaurent()));
+        detailList.add(new Menu("Add Restaurent",R.drawable.add_res,new AddRestaurent()));
         detailList.add(new Menu("Recently Viewed",R.mipmap.viewed,new HotelDashboard()));
         detailList.add(new Menu("Favourites",R.mipmap.favorites,new HotelDashboard()));
         detailList.add(new Menu("Location",R.mipmap.location_color,new Location()));
         detailList.add(new Menu("Rate Us",R.mipmap.rateus,new HotelDashboard()));
         detailList.add(new Menu("Settings",R.mipmap.settings,new HotelDashboard()));
         detailList.add(new Menu("About Us",R.mipmap.about_us,new AboutUs()));
-        detailList.add(new Menu("Change Password",R.mipmap.about_us,new ChangePassword()));
+        detailList.add(new Menu("Change Password",R.drawable.changepassword,new ChangePassword()));
         detailList.add(new Menu("Sign Out",R.mipmap.signout,new HotelDashboard()));
 
         sidemenu=(RecyclerView)view.findViewById(R.id.sidemenu);

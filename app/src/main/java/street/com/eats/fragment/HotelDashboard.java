@@ -48,6 +48,7 @@ import street.com.eats.adapter.MyPagerAdapter;
 import street.com.eats.adapter.SnapAdapter;
 import street.com.eats.common.GlobalClass;
 import street.com.eats.common.Hotel;
+import street.com.eats.common.Shared;
 import street.com.eats.common.Snap;
 
 /**
@@ -71,12 +72,13 @@ public class HotelDashboard extends Fragment {
 
         intailiseView(view);
 
-        Handler handler=new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        if(Shared.getInstance().getSomeStringValue(getActivity())==null)
+        {
+            Handler handler=new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
 
-                ViewTarget target = new ViewTarget(view.findViewById(R.id.back));
 
 
              /*   new ShowcaseView.Builder(getActivity())
@@ -86,16 +88,35 @@ public class HotelDashboard extends Fragment {
                         .setShowcaseDrawer(new CustomShowcaseView(getResources()))
                         .build();*/
 
-                new ShowcaseView.Builder(getActivity())
-                        .withMaterialShowcase()
-                        .setStyle(R.style.CustomShowcaseTheme2)
-                        .setTarget(new ViewTarget(R.id.back, getActivity()))
-                        .hideOnTouchOutside()
-                        .setContentTitle("Side Menu")
-                        .setContentText("Click here and you will get options to navigate to other sections.")
-                        .build();
-            }
-        },1000);
+                    sv= new ShowcaseView.Builder(getActivity())
+                            .withMaterialShowcase()
+                            .setStyle(R.style.CustomShowcaseTheme2)
+                            .setTarget(new ViewTarget(R.id.back, getActivity()))
+                            //.hideOnTouchOutside()
+                            .setContentTitle("Side Menu")
+                            .setContentText("Click here and you will get options to navigate to other sections.")
+                            .build();
+
+
+                    sv.setButtonText("Next");
+
+                    sv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+
+                                Shared.getInstance().setSomeStringValue(getActivity(),"true");
+
+
+                        }
+                    });
+
+                }
+            },1000);
+
+
+        }
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
