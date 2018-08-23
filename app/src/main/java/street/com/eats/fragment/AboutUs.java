@@ -53,7 +53,7 @@ public class AboutUs  extends Fragment {
 
         // Set margin for pages as a negative number, so a part of next and
         // previous pages will be showed
-        pager.setPageMargin(-200);
+        pager.setPageMargin(dpToPx(-100));
         return view;
     }
     void init(View view)
@@ -61,5 +61,8 @@ public class AboutUs  extends Fragment {
         pager = (ViewPager) view.findViewById(R.id.myviewpager);
 
     }
-
+    public int dpToPx(int dp) {
+        DisplayMetrics displayMetrics = getActivity().getResources().getDisplayMetrics();
+        return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+    }
 }
