@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_margin="15dp"
+                        android:src="@drawable/profile"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FFFF"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:text="Robert Anteni"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp"
+                        android:maxLength="15"
+                        />
+
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="First Name"
+                    android:paddingLeft="25dp"
+                    android:layout_margin="10dp"
+                    android:textSize="16dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:textColor="#44413A"
+                    android:background="@drawable/signup_input"
+                    />
+                <EditText
+                    android:id="@+id/lname"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Last Name"
+                    android:paddingLeft="25dp"
+                    android:layout_margin="10dp"
+                    android:textSize="16dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:textColor="#44413A"
+                    android:background="@drawable/signup_input"
+                    />
+                <EditText
+                    android:id="@+id/mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Mobile No"
+                    android:paddingLeft="25dp"
+                    android:layout_margin="10dp"
+                    android:textSize="16dp"
+                    android:singleLine="true"
+                    android:padding="10dp"
+                    android:drawableRight="@mipmap/phone_material"
+
+                    android:imeOptions="actionNext"
+                    android:textColor="#44413A"
+                    android:background="@drawable/signup_input"
+                    />
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Email ID"
+                    android:paddingLeft="25dp"
+                    android:textSize="16dp"
+                    android:layout_margin="10dp"
+                    android:singleLine="true"
+                    android:drawableRight="@mipmap/mail"
+                    android:padding="10dp"
+                    android:imeOptions="actionDone"
+                    android:textColor="#44413A"
+                    android:background="@drawable/signup_input"
+                    />
+
+
+
+
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:ems="15"
+                    android:gravity="center"
+                    android:layout_gravity="center|top"
+                    android:text="Update"
+                    android:layout_margin="5dp"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/button_bg"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
