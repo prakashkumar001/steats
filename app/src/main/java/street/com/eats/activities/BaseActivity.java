@@ -19,6 +19,7 @@ import street.com.eats.interfaces.APIInterface;
 import street.com.eats.interfaces.ApiResult;
 import street.com.eats.interfaces.BaseView;
 import street.com.eats.pojo.request.LoginRequest;
+import street.com.eats.pojo.request.SignUpRequest;
 import street.com.eats.retrofit.APIClient;
 
 public class BaseActivity extends AppCompatActivity implements BaseView {
@@ -40,9 +41,10 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
         {
             LoginRequest loginRequest=(LoginRequest)object;
              call=apiInterface.doLogin(loginRequest);
-        }else if(key.equalsIgnoreCase("Test"))
+        }else if(key.equalsIgnoreCase("Signup"))
         {
-             call = apiInterface.doGetUserList("1");
+            SignUpRequest signUpRequest=(SignUpRequest) object;
+             call = apiInterface.doSignUp(signUpRequest);
         }
 
 
