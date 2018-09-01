@@ -1,14 +1,12 @@
-package street.com.eats.login;
+package street.com.eats.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +21,6 @@ import com.facebook.GraphResponse;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -43,15 +40,13 @@ import org.json.JSONObject;
 import java.util.Arrays;
 
 import street.com.eats.R;
-import street.com.eats.activities.MainActivity;
 import street.com.eats.forgotpassword.ForgotPassword;
+import street.com.eats.interfaces.ApiResult;
+import street.com.eats.pojo.request.LoginRequest;
+import street.com.eats.pojo.request.response.LoginResponse;
 import street.com.eats.registration.SignUp;
 
-/**
- * Created by Creative IT Works on 09-Jul-18.
- */
-
-public class Login extends AppCompatActivity {
+public class Login extends BaseActivity {
     EditText email,password;
     Button login;
     TextView forgetpassword,signup;
@@ -64,11 +59,10 @@ public class Login extends AppCompatActivity {
     private static final String TAG = "simplifiedcoding";
 
     //creating a GoogleSignInClient object
-   public static GoogleSignInClient mGoogleSignInClient;
+    public static GoogleSignInClient mGoogleSignInClient;
 
     //And also a Firebase Auth object
     FirebaseAuth mAuth;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +71,7 @@ public class Login extends AppCompatActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         callbackManager = CallbackManager.Factory.create();
 
-       // getFbInfo();
+        // getFbInfo();
 
 
         //first we intialized the FirebaseAuth object
@@ -108,9 +102,34 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LoginRequest loginRequest=new LoginRequest();
+                loginRequest.username=email.getText().toString();
+                loginRequest.password=password.getText().toString();
+                callApi("Login",(Object)loginRequest, new ApiResult() {
+                    @Override
+                    public void onPreExecute() {
+                        showProgessDialog("","Loading");
+                    }
 
-                Intent i=new Intent(Login.this, MainActivity.class);
-                startActivity(i);
+                    @Override
+                    public void onSucess(Object object, int resultCode) {
+                        hideProgressDialog();
+                        Log.i("Response","Response"+ (LoginResponse)object);
+
+                        Intent i=new Intent(Login.this, MainActivity.class);
+                        startActivity(i);
+
+                    }
+
+                    @Override
+                    public void onFailure(Object object, int resultCode) {
+                        hideProgressDialog();
+
+                    }
+                });
+            
+
+         
             }
         });
 
@@ -132,6 +151,8 @@ public class Login extends AppCompatActivity {
         });
     }
 
+   
+           
     private void intailiseView()
     {
         signup= (TextView) findViewById(R.id.signup);
@@ -172,7 +193,7 @@ public class Login extends AppCompatActivity {
                             JSONObject json_object,
                             GraphResponse response) {
 
-                       // Toast.makeText(getApplicationContext(),json_object.toString(),Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(getApplicationContext(),json_object.toString(),Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         intent.putExtra("userProfile", json_object.toString());
                         startActivity(intent);

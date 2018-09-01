@@ -21,11 +21,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import street.com.eats.activities.Login;
 import street.com.eats.activities.MainActivity;
 import street.com.eats.R;
 import street.com.eats.common.IntroData;
 import street.com.eats.common.PreferenceManager;
-import street.com.eats.login.Login;
+
 import street.com.eats.registration.SignUp;
 
 /**

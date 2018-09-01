@@ -101,20 +101,20 @@ public class HotelDashboard extends Fragment {
                     sv.setButtonText("Next");
 
 
+                    sv.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
 
+
+                            Shared.getInstance().setSomeStringValue(getActivity(),"true");
+
+
+                        }
+                    });
                 }
             },1000);
 
-            sv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
 
-
-                    Shared.getInstance().setSomeStringValue(getActivity(),"true");
-
-
-                }
-            });
         }
 
 
